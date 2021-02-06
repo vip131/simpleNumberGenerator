@@ -10,13 +10,13 @@ import Foundation
 
 struct PrimeNumbers {
     
-    static func generate(upperBound: Int = 100) -> [[Int]] {
+    static func generate(upperBound: Int = 100, from startNum: Int) -> [[Int]] {
         var eratosthenesSieve = Array.init(repeating: true,
                                            count: upperBound)
         var primes = [Int]()
         eratosthenesSieve[0] = false
         eratosthenesSieve[1] = false
-        for i in 2..<upperBound where eratosthenesSieve[i] == true {
+        for i in startNum..<upperBound where eratosthenesSieve[i] == true {
             var j = i*i
             while j < upperBound {
                 eratosthenesSieve[j] = false
