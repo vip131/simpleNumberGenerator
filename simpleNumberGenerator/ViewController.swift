@@ -39,34 +39,8 @@ class ViewController: UITableViewController {
         let cell1 = cell as! Cell
         if indexPath.row == prime.count - 1 {
             scrollIndex += 1
-            let lastPrimeNum = prime.last?.last
-            var nextPrimeNumArray = PrimeNumbers.findPrimeNumberlist(fromNumber: lastPrimeNum!, toNumber: scrollIndex * 300)
-            var newArr = [Int]()
-            for arrOfPrimeNum in nextPrimeNumArray {
-                newArr.append(contentsOf: arrOfPrimeNum)
-            }
-            //check if last arr in primeArr is 1.count then append 1st number of new array to end of primeNumbers. Then chop new array by 2 again
-            //            if prime.last?.count == 1 {
-            //                print("1")
-            //                var last = prime.last!
-            //                last.append(newArr[0])
-            //                prime.insert(last, at: prime.endIndex)
-            //                let chunkedArr = newArr.chunked(into: 2)
-            //                for chunks in chunkedArr {
-            //                    self.prime.append(chunks)
-            //                }
-            //
-            //            tableView.reloadData()
-            // } else {
-            let lastPrimeArr = nextPrimeNumArray.last!
-            if lastPrimeArr.count == 1 {
-                nextPrimeNumArray.removeLast()
-            }
-            for arrOfPrimeNum in nextPrimeNumArray {
-                self.prime.append(arrOfPrimeNum)
-            }
+            fetchNewPrimeArr()
             tableView.reloadData()
-            //}
         }
         cell1.textLabel?.textAlignment = .center
         let number = Number(isGray: false)
@@ -76,6 +50,26 @@ class ViewController: UITableViewController {
         cell1.rightView.backgroundColor = number.isGray ? .clear : .lightGray
         cell1.leftView.backgroundColor = number.isGray ? .lightGray : .clear
     }
+    
+    
+    
+    
+    
+    func fetchNewPrimeArr() {
+        let lastPrimeNum = prime.last?.last
+        var nextPrimeNumArray = PrimeNumbers.findPrimeNumberlist(fromNumber: lastPrimeNum!, toNumber: scrollIndex * 300)
+
+        let lastPrimeArr = nextPrimeNumArray.last!
+        if lastPrimeArr.count == 1 {
+            nextPrimeNumArray.removeLast()
+        }
+        for arrOfPrimeNum in nextPrimeNumArray {
+            self.prime.append(arrOfPrimeNum)
+        }
+    }
+    
+    
+    
 }
 
 
@@ -83,9 +77,6 @@ extension ViewController: UITableViewDataSourcePrefetching {
     
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         // print("prefetch \(indexPaths[0].row)")
-        
-        
-        
     }
     
 }
