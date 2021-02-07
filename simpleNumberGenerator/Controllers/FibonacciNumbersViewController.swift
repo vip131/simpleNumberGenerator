@@ -46,13 +46,36 @@ class FibonacciNumbersViewController: UITableViewController {
     //MARK: - TableView Delegate -
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        //
+         let fibonacciCell = cell as! Cell
+        if indexPath.row == self.fib!.count - 1 {
+            scrollIndex += 1
+            DispatchQueue.main.async {
+                self.fetchNewFibonacciArr(indexPath: indexPath)
+            }
+            tableView.reloadData()
+            
+        }
+        let number = Number(isGray: false)
+        if (indexPath.row % 2 == 0) {
+            number.isGray = true
+        }
+        fibonacciCell.rightView.backgroundColor = number.isGray ? .clear : .lightGray
+        fibonacciCell.leftView.backgroundColor = number.isGray ? .lightGray : .clear
     }
     
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
          return UITableView.automaticDimension
      }
+    
+    
+    func fetchNewFibonacciArr(indexPath: IndexPath) {
+        let lastFibArray = fib?.last!
+        let nextFibArray = Fibonacci.getFibonacciArray(fromStartInt: false, to: 30, with: lastFibArray)
+        for arr in nextFibArray! {
+            fib?.append(arr)
+        }
+    }
     
 
 }

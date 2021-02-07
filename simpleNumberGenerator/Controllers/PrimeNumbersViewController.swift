@@ -42,7 +42,7 @@ class PrimeNumbersViewController: UITableViewController {
             fetchNewPrimeArr()
             tableView.reloadData()
         }
-        cell1.textLabel?.textAlignment = .center
+        //cell1.textLabel?.textAlignment = .center
         let number = Number(isGray: false)
         if (indexPath.row % 2 == 0) {
             number.isGray = true

@@ -27,13 +27,15 @@ struct Fibonacci {
                 let startArr = [lastNumbs[0], lastNumbs[1]]
                 resultArr.append(contentsOf: startArr)
                 for i in 0 ..< endInt - 2 {
-                    let nextNum = resultArr[i] + resultArr.last!
+                    //Int overflow handling &+
+                    let nextNum = resultArr[i] &+ resultArr.last!
                     resultArr.append(nextNum)
                 }
             }
         }
         let chunkedArr = resultArr.chunked(into: 2)
         return chunkedArr
+        
     }
     
     //       func fibonacci(n: Int) {

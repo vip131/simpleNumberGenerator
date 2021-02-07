@@ -14,7 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-//  
+//
+        print(Int.max)
 //        print(Fibonacci.getFibonacciArray(fromStartInt: true, to: 20, with: nil)!)
 //        print("\r__________-")
 //        print(Fibonacci.getFibonacciArray(fromStartInt: false, to: 20, with: [2584,4181])!)
