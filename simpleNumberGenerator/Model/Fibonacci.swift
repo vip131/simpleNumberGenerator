@@ -10,16 +10,16 @@ import Foundation
 
 struct Fibonacci {
     
-    static func getFibonacciArray(fromStartInt: Bool, to endInt: Int ,with lastTwoNumbs: [Int]?) -> [Int]? {
+    static func getFibonacciArray(fromStartInt: Bool, to endInt: Int ,with lastTwoNumbs: [Int]?) -> [[Int]]? {
         var resultArr = [Int]()
         
         if fromStartInt  {
             let startArr = [0,1]
             resultArr.append(contentsOf: startArr)
             for i in 0 ..< endInt - 2 {
-                         let nextNum = resultArr[i] + resultArr.last!
-                         resultArr.append(nextNum)
-                     }
+                let nextNum = resultArr[i] + resultArr.last!
+                resultArr.append(nextNum)
+            }
             
         } else if !fromStartInt {
             guard let lastNumbs = lastTwoNumbs else { return nil}
@@ -27,30 +27,23 @@ struct Fibonacci {
                 let startArr = [lastNumbs[0], lastNumbs[1]]
                 resultArr.append(contentsOf: startArr)
                 for i in 0 ..< endInt - 2 {
-                             let nextNum = resultArr[i] + resultArr.last!
-                             resultArr.append(nextNum)
-                         }
-
+                    let nextNum = resultArr[i] + resultArr.last!
+                    resultArr.append(nextNum)
+                }
             }
         }
-        
-        return resultArr
-}
+        let chunkedArr = resultArr.chunked(into: 2)
+        return chunkedArr
+    }
+    
+    //       func fibonacci(n: Int) {
+    //          var fibArray = [0,1]
+    //           for i in 0 ..< n - 2 {
+    //               let nextNum = fibArray[i] + fibArray.last!
+    //               fibArray.append(nextNum)
+    //           }
+    //           print(fibArray)
+    //       }
     
     
-       
-       func fibonacci(n: Int) {
-          var fibArray = [0,1]
-           for i in 0 ..< n - 2 {
-               let nextNum = fibArray[i] + fibArray.last!
-               fibArray.append(nextNum)
-           }
-           print(fibArray)
-       }
-       
-       
-    
-    
-    
-
 }

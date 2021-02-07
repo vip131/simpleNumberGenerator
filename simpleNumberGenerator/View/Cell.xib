@@ -19,8 +19,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zjn-54-9ii">
                         <rect key="frame" x="0.0" y="0.0" width="159" height="44"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0NY-jF-wWY">
-                                <rect key="frame" x="44" y="-5.5" width="71.5" height="55"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0NY-jF-wWY">
+                                <rect key="frame" x="0.0" y="0.0" width="71.5" height="54.5"/>
                                 <fontDescription key="fontDescription" name="KhmerSangamMN" family="Khmer Sangam MN" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -28,15 +28,17 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="0NY-jF-wWY" firstAttribute="centerY" secondItem="zjn-54-9ii" secondAttribute="centerY" id="bGr-x4-nnq"/>
-                            <constraint firstItem="0NY-jF-wWY" firstAttribute="centerX" secondItem="zjn-54-9ii" secondAttribute="centerX" id="bkL-bB-TUV"/>
+                            <constraint firstItem="0NY-jF-wWY" firstAttribute="leading" secondItem="zjn-54-9ii" secondAttribute="leading" id="0Mb-tb-ujd"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="5AR-sG-4bG"/>
+                            <constraint firstItem="0NY-jF-wWY" firstAttribute="top" secondItem="zjn-54-9ii" secondAttribute="top" id="Py0-4t-Neh"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fxz-LW-u0F">
                         <rect key="frame" x="159" y="0.0" width="161" height="44"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bu-ia-4dA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="9bu-ia-4dA">
                                 <rect key="frame" x="45" y="-5.5" width="71.5" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="KhmerSangamMN" family="Khmer Sangam MN" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -44,8 +46,9 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="9bu-ia-4dA" firstAttribute="centerX" secondItem="fxz-LW-u0F" secondAttribute="centerX" id="B4m-s5-riK"/>
-                            <constraint firstItem="9bu-ia-4dA" firstAttribute="centerY" secondItem="fxz-LW-u0F" secondAttribute="centerY" id="zRN-nk-vxC"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="5Pe-Y9-7Rh"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="161" id="eH8-Y2-mYY"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="qfP-JS-QwZ"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -55,8 +58,10 @@
                     <constraint firstAttribute="bottom" secondItem="fxz-LW-u0F" secondAttribute="bottom" id="6hv-zH-omo"/>
                     <constraint firstAttribute="bottom" secondItem="zjn-54-9ii" secondAttribute="bottom" id="E1H-Lo-oSI"/>
                     <constraint firstItem="fxz-LW-u0F" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="L8G-jh-V9E"/>
+                    <constraint firstItem="fxz-LW-u0F" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="T6f-kF-dDw"/>
                     <constraint firstItem="fxz-LW-u0F" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="159" id="UgM-sv-bj6"/>
                     <constraint firstItem="zjn-54-9ii" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="VgU-Kf-gxs"/>
+                    <constraint firstAttribute="trailing" secondItem="fxz-LW-u0F" secondAttribute="trailing" id="c67-lB-qms"/>
                     <constraint firstItem="zjn-54-9ii" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="jeK-9B-6g4"/>
                     <constraint firstItem="fxz-LW-u0F" firstAttribute="leading" secondItem="zjn-54-9ii" secondAttribute="trailing" id="p4g-Q2-p37"/>
                 </constraints>

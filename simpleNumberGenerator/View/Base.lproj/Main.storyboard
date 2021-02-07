@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vxq-hh-iJx">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Prime numbers generator-->
+        <scene sceneID="rcE-Gh-w71">
+            <objects>
+                <tableViewController id="Efc-7a-xMt" customClass="PrimeNumbersViewController" customModule="simpleNumberGenerator" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="KAa-jS-VQS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="Efc-7a-xMt" id="UOu-Yd-b0k"/>
+                            <outlet property="delegate" destination="Efc-7a-xMt" id="QoP-ol-6U5"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Prime numbers generator" selectedImage="flame" catalog="system" id="Dbn-RG-D9z"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hT6-n7-fKL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="897.10144927536237" y="-77.008928571428569"/>
+        </scene>
+        <!--Fibonacci numbers generator-->
+        <scene sceneID="LlN-Vl-9T2">
+            <objects>
+                <tableViewController id="Sbe-09-LAU" customClass="FibonacciNumbersViewController" customModule="simpleNumberGenerator" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2w9-g7-5wH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="rXH-9l-66z">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rXH-9l-66z" id="wV4-dT-6oG">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Sbe-09-LAU" id="E3H-Iy-hlO"/>
+                            <outlet property="delegate" destination="Sbe-09-LAU" id="Mtc-Fn-gbi"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Fibonacci numbers generator" selectedImage="wind" catalog="system" id="RuJ-UB-Nad"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="axg-6r-xpm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="897.10144927536237" y="637.5"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="lwe-ec-0E3">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="vxq-hh-iJx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="fill" id="e0F-56-fMN">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.4308429956" green="0.63565391299999996" blue="0.94033825400000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Efc-7a-xMt" kind="relationship" relationship="viewControllers" id="hyR-cK-9s5"/>
+                        <segue destination="Sbe-09-LAU" kind="relationship" relationship="viewControllers" id="0wb-Ap-mBc"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Kf-ZE-ffh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-13.043478260869566" y="279.91071428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="flame" catalog="system" width="109" height="128"/>
+        <image name="wind" catalog="system" width="128" height="103"/>
+    </resources>
+</document>
