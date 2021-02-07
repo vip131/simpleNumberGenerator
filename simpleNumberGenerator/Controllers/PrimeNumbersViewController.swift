@@ -75,8 +75,10 @@ class PrimeNumbersViewController: UITableViewController {
 
 extension PrimeNumbersViewController: UITableViewDataSourcePrefetching {
     
-    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-        // print("prefetch \(indexPaths[0].row)")
+    
+   func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+     
+    
     }
     
 }
