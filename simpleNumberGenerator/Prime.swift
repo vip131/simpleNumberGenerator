@@ -31,6 +31,7 @@ struct PrimeNumbers {
     }
     
     
+    //Another work method
     
     static func findPrimeNumberlist(fromNumber:Int, toNumber: Int) -> [[Int]] {
         var primes = [Int]()
