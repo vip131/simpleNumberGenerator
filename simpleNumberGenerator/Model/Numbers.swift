@@ -10,29 +10,20 @@ import Foundation
 
 class Number  {
     var isGray: Bool
-    lazy var numArr = Number.randomNum()
+//  lazy var numArr = Number.randomNum()
     init(isGray: Bool) {
         self.isGray = isGray
     }
-    
-    
-    
-    
-    
+
     //Test Func
-    class func randomNum() -> [String] {
-        var arr = [String]()
-        for _ in 0...100 {
-            let randomInt = Int.random(in: 0...100)
-            arr.append(String(randomInt))
-        }
-        return arr
-        
-    }
-    
-    
-    
-    
-    
+//    class func randomNum() -> [String] {
+//        var arr = [String]()
+//        for _ in 0...100 {
+//            let randomInt = Int.random(in: 0...100)
+//            arr.append(String(randomInt))
+//        }
+//        return arr
+//
+//    }
     
 }

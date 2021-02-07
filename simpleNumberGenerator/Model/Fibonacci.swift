@@ -35,17 +35,6 @@ struct Fibonacci {
         }
         let chunkedArr = resultArr.chunked(into: 2)
         return chunkedArr
-        
     }
-    
-    //       func fibonacci(n: Int) {
-    //          var fibArray = [0,1]
-    //           for i in 0 ..< n - 2 {
-    //               let nextNum = fibArray[i] + fibArray.last!
-    //               fibArray.append(nextNum)
-    //           }
-    //           print(fibArray)
-    //       }
-    
     
 }

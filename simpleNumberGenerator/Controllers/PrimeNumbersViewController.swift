@@ -9,13 +9,14 @@
 import UIKit
 
 class PrimeNumbersViewController: UITableViewController {
-    var prime = PrimeNumbers.generate(upperBound: 200, from: 2) // upperBound >= 200
+    var prime = PrimeNumbers.generate(upperBound: 200, from: 2) // required! upperBound >= 200
     var scrollIndex = 1
-    let queue = OperationQueue()
+    //let queue = OperationQueue()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.prefetchDataSource = self
+         tableView.allowsSelection = false
+        //tableView.prefetchDataSource = self
         tableView.register(UINib(nibName: "Cell", bundle: nil), forCellReuseIdentifier: "cell")
     }
     
@@ -34,9 +35,6 @@ class PrimeNumbersViewController: UITableViewController {
     }
     
     //MARK: - TableView Delegate
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
-    }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let primeCell = cell as! Cell
@@ -50,14 +48,11 @@ class PrimeNumbersViewController: UITableViewController {
         primeCell.configurateCell(cell: primeCell, indexPath: indexPath)
     }
     
-    
-    
-    
-    
+    //MARK: - Fetch new Prime's method -
     func fetchNewPrimeArr() {
         let lastPrimeNum = prime.last?.last
-        var nextPrimeNumArray = PrimeNumbers.findPrimeNumberlist(fromNumber: lastPrimeNum!, toNumber: scrollIndex * 300)
-
+        let toNumber = scrollIndex &* 300
+        var nextPrimeNumArray = PrimeNumbers.findPrimeNumberlist(fromNumber: lastPrimeNum!, toNumber: toNumber)
         let lastPrimeArr = nextPrimeNumArray.last!
         if lastPrimeArr.count == 1 {
             nextPrimeNumArray.removeLast()
@@ -67,20 +62,12 @@ class PrimeNumbersViewController: UITableViewController {
         }
     }
     
-    
-    
 }
 
 
 extension PrimeNumbersViewController: UITableViewDataSourcePrefetching {
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-        print(indexPaths)
-        
-      
+        //print(indexPaths)
     }
-    
-    
-    
-   
     
 }

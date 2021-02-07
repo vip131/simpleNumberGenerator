@@ -9,7 +9,6 @@
 import Foundation
 
 struct PrimeNumbers {
-   
     
     static func generate(upperBound: Int = 100, from startNum: Int) -> [[Int]] {
         var eratosthenesSieve = Array.init(repeating: true,
@@ -27,45 +26,39 @@ struct PrimeNumbers {
             primes.append(i)
             
         }
-       let primesArr = primes.chunked(into: 2)
-        return primesArr
-    }
-    
-    
-    //Another work method
-    
-    
-    
-    static func findPrimeNumberlist(fromNumber:Int, toNumber: Int) -> [[Int]] {
-        var primes = [Int]()
-     for i in (fromNumber + 1)...toNumber
-            {
-                var isPrime = true
-                if i <= 1 { // number must be positive integer
-                    isPrime = false
-                }
-                else if i <= 3 {
-                    isPrime = true
-                }
-                else {
-                    for j in 2...i/2 // here i am using loop from 2 to i/2 because it will reduces the  iteration.
-                    {
-                        if i%j == 0 { // number must have only 1 factor except 1. so use break: no need to check further
-                            isPrime = false
-                            break
-                        }
-                    }
-                }
-                if isPrime  {
-                    primes.append(i)
-                }
-            }
         let primesArr = primes.chunked(into: 2)
         return primesArr
     }
     
     
-    
+    //Another work method
+    static func findPrimeNumberlist(fromNumber:Int, toNumber: Int) -> [[Int]] {
+        var primes = [Int]()
+        for i in (fromNumber + 1)...toNumber
+        {
+            var isPrime = true
+            if i <= 1 { // number must be positive integer
+                isPrime = false
+            }
+            else if i <= 3 {
+                isPrime = true
+            }
+            else {
+                for j in 2...i/2 // here i am using loop from 2 to i/2 because it will reduces the  iteration.
+                {
+                    if i%j == 0 { // number must have only 1 factor except 1. so use break: no need to check further
+                        isPrime = false
+                        break
+                    }
+                }
+            }
+            if isPrime  {
+                primes.append(i)
+            }
+        }
+        let primesArr = primes.chunked(into: 2)
+        return primesArr
+    }
     
 }
 

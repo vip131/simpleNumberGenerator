@@ -17,14 +17,10 @@ class Cell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
      func configurateCell(cell: Cell, indexPath: IndexPath) {
@@ -34,6 +30,7 @@ class Cell: UITableViewCell {
               }
               cell.rightView.backgroundColor = number.isGray ? .clear : .lightGray
               cell.leftView.backgroundColor = number.isGray ? .lightGray : .clear
+        
     }
     
  
