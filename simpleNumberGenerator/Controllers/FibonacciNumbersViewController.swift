@@ -31,10 +31,10 @@ class FibonacciNumbersViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! Cell
         let currentArr = fib![indexPath.row]
         
-        cell.leftLabel.numberOfLines = 0;
-        cell.leftLabel.lineBreakMode = .byClipping
-        cell.rightLabel.numberOfLines = 0;
-        cell.rightLabel.lineBreakMode = .byClipping
+//        cell.leftLabel.numberOfLines = 0;
+//        cell.leftLabel.lineBreakMode = .byClipping
+//        cell.rightLabel.numberOfLines = 0;
+//        cell.rightLabel.lineBreakMode = .byClipping
         
         cell.leftLabel.text = String(currentArr[0])
         cell.rightLabel.text = String(currentArr[1])
@@ -50,16 +50,11 @@ class FibonacciNumbersViewController: UITableViewController {
         if indexPath.row == self.fib!.count - 1 {
             scrollIndex += 1
                 self.fetchNewFibonacciArr(indexPath: indexPath)
-            
-            tableView.reloadData()
-            
+            DispatchQueue.main.async {
+                   tableView.reloadData()
+            }
         }
-        let number = Number(isGray: false)
-        if (indexPath.row % 2 == 0) {
-            number.isGray = true
-        }
-        fibonacciCell.rightView.backgroundColor = number.isGray ? .clear : .lightGray
-        fibonacciCell.leftView.backgroundColor = number.isGray ? .lightGray : .clear
+        fibonacciCell.configurateCell(cell: fibonacciCell, indexPath: indexPath)
     }
     
     

@@ -11,8 +11,11 @@ import UIKit
 class PrimeNumbersViewController: UITableViewController {
     var prime = PrimeNumbers.generate(upperBound: 200, from: 2) // upperBound >= 200
     var scrollIndex = 1
+    let queue = OperationQueue()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.prefetchDataSource = self
         tableView.register(UINib(nibName: "Cell", bundle: nil), forCellReuseIdentifier: "cell")
     }
     
@@ -36,19 +39,15 @@ class PrimeNumbersViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let cell1 = cell as! Cell
+        let primeCell = cell as! Cell
         if indexPath.row == prime.count - 1 {
             scrollIndex += 1
             fetchNewPrimeArr()
-            tableView.reloadData()
+            DispatchQueue.main.async {
+              tableView.reloadData()
+            }
         }
-        //cell1.textLabel?.textAlignment = .center
-        let number = Number(isGray: false)
-        if (indexPath.row % 2 == 0) {
-            number.isGray = true
-        }
-        cell1.rightView.backgroundColor = number.isGray ? .clear : .lightGray
-        cell1.leftView.backgroundColor = number.isGray ? .lightGray : .clear
+        primeCell.configurateCell(cell: primeCell, indexPath: indexPath)
     }
     
     
@@ -74,11 +73,14 @@ class PrimeNumbersViewController: UITableViewController {
 
 
 extension PrimeNumbersViewController: UITableViewDataSourcePrefetching {
-    
-    
-   func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-     
-    
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        print(indexPaths)
+        
+      
     }
+    
+    
+    
+   
     
 }

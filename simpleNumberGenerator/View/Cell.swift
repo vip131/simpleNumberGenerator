@@ -27,8 +27,13 @@ class Cell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    public func configurateWithNumber(_ numbers : [Int]) {
-        
+     func configurateCell(cell: Cell, indexPath: IndexPath) {
+        let number = Number(isGray: false)
+              if (indexPath.row % 2 == 0) {
+                  number.isGray = true
+              }
+              cell.rightView.backgroundColor = number.isGray ? .clear : .lightGray
+              cell.leftView.backgroundColor = number.isGray ? .lightGray : .clear
     }
     
  
