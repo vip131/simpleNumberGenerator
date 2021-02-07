@@ -10,7 +10,7 @@ import Foundation
 
 class Number  {
     var isGray: Bool
-    let numArr = randomNum()
+    lazy var numArr = Number.randomNum()
     init(isGray: Bool) {
         self.isGray = isGray
     }
@@ -18,6 +18,8 @@ class Number  {
     
     
     
+    
+    //Test Func
     class func randomNum() -> [String] {
         var arr = [String]()
         for _ in 0...100 {

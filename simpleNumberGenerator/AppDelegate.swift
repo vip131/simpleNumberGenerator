@@ -14,7 +14,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+//  
+//        print(Fibonacci.getFibonacciArray(fromStartInt: true, to: 20, with: nil)!)
+//        print("\r__________-")
+//        print(Fibonacci.getFibonacciArray(fromStartInt: false, to: 20, with: [2584,4181])!)
+//        var first = Fibonacci.getFibonacciArray(fromStartInt: true, to: 20, with: nil)!
+//        let second = Fibonacci.getFibonacciArray(fromStartInt: false, to: 20, with: [2584,4181])!
+//        first.removeLast()
+//        first.removeLast()
+//        print("\r------")
+//        first.append(contentsOf: second)
+//        print("------>>>\(first)<<-----")
+//        
         return true
     }
 
