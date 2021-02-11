@@ -20,7 +20,7 @@
 		84872C7B25D0177800B1CDED /* Fibonacci.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84872C7125CFF8A400B1CDED /* Fibonacci.swift */; };
 		84872C7C25D017EE00B1CDED /* FibonacciNumbersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84872C7425D013C400B1CDED /* FibonacciNumbersViewController.swift */; };
 		849E7C8E25D06E5B003AE93C /* README.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 849E7C8D25D06E5B003AE93C /* README.rtf */; };
-		84D3359225D5466400EC9F43 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D3359125D5466400EC9F43 /* K.swift */; };
+		84D3359325D56AA500EC9F43 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D3359125D5466400EC9F43 /* K.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,7 +83,6 @@
 				84872C4E25CD8F5000B1CDED /* AppDelegate.swift */,
 				84872C5025CD8F5000B1CDED /* SceneDelegate.swift */,
 				84872C5C25CD8F5700B1CDED /* Info.plist */,
-				84D3359125D5466400EC9F43 /* K.swift */,
 			);
 			path = simpleNumberGenerator;
 			sourceTree = "<group>";
@@ -127,6 +126,7 @@
 		84872C7A25D0144200B1CDED /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				84D3359125D5466400EC9F43 /* K.swift */,
 				84872C5925CD8F5700B1CDED /* LaunchScreen.storyboard */,
 				84872C5725CD8F5700B1CDED /* Assets.xcassets */,
 			);
@@ -206,8 +206,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84D3359325D56AA500EC9F43 /* K.swift in Sources */,
 				84872C7C25D017EE00B1CDED /* FibonacciNumbersViewController.swift in Sources */,
-				84D3359225D5466400EC9F43 /* K.swift in Sources */,
 				84872C7B25D0177800B1CDED /* Fibonacci.swift in Sources */,
 				84872C5325CD8F5000B1CDED /* PrimeNumbersViewController.swift in Sources */,
 				84872C6E25CDC55800B1CDED /* PrimeNumbers.swift in Sources */,

@@ -9,7 +9,7 @@
 import UIKit
 
 class PrimeNumbersViewController: UITableViewController {
-    var prime = PrimeNumbers.generate(upperBound: 200, from: 2).chunked(into: K.chunkedIndex)//required! upperBound >= 200
+    var prime = PrimeNumbers.generate(upperBound: 400, from: 2).chunked(into: K.chunkedIndex)//required! upperBound >= 200
     var scrollIndex = 1
     //let queue = OperationQueue()
     
@@ -31,6 +31,7 @@ class PrimeNumbersViewController: UITableViewController {
         let currentArr = prime[indexPath.row]
         cell.leftLabel.text = String(currentArr[0])
         cell.rightLabel.text = String(currentArr[1])
+       
         return cell
     }
     
@@ -40,13 +41,12 @@ class PrimeNumbersViewController: UITableViewController {
         let primeCell = cell as! Cell
         if indexPath.row == prime.count - 1 {
             scrollIndex += 1
-            let queue = DispatchQueue.init(label: "back", qos: .default, attributes: .concurrent, autoreleaseFrequency: .never, target: nil)
+            let queue = DispatchQueue.init(label: "back", qos: .userInteractive, attributes: .concurrent, autoreleaseFrequency: .never, target: nil)
             queue.async {
                 self.fetchNewPrimeArr()
             }
-           
-              tableView.reloadData()
-            
+          
+        
         }
         primeCell.configurateCell(cell: primeCell, indexPath: indexPath)
     }
@@ -56,14 +56,31 @@ class PrimeNumbersViewController: UITableViewController {
         
         let lastPrimeNum = prime.last?.last
         let toNumber = scrollIndex &* 300
-        var nextPrimeNumArray = PrimeNumbers.findPrimeNumberlist(fromNumber: lastPrimeNum!, toNumber: toNumber).chunked(into:K.chunkedIndex)
-        let lastPrimeArr = nextPrimeNumArray.last!
+        let nextPrimeNumArray = PrimeNumbers.findPrimeNumberlist(fromNumber: lastPrimeNum!, toNumber: toNumber)
+        var nextPrimeNumArrayChunked = nextPrimeNumArray.chunked(into:K.chunkedIndex)
+        let lastPrimeArr = nextPrimeNumArrayChunked.last!
         if lastPrimeArr.count == 1 {
-            nextPrimeNumArray.removeLast()
+            nextPrimeNumArrayChunked.removeLast()
         }
-        for arrOfPrimeNum in nextPrimeNumArray {
+        for arrOfPrimeNum in nextPrimeNumArrayChunked {
             self.prime.append(arrOfPrimeNum)
         }
+        DispatchQueue.main.async {
+            
+            self.tableView.reloadData()
+        }
+//        DispatchQueue.main.async {
+//            self.tableView.performBatchUpdates({
+//                       var newPaths = [IndexPath]()
+//            var index = (self.prime.count) - nextPrimeNumArray.count
+//            while index < (self.prime.count)  {
+//                newPaths.append(IndexPath(item: index, section: 0))
+//                index += 1
+//            }
+//                self.tableView.insertRows(at: newPaths, with: .automatic)
+//                   }, completion: nil)
+//        }
+        
     }
     
 }

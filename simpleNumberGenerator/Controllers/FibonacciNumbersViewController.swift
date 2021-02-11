@@ -41,11 +41,11 @@ class FibonacciNumbersViewController: UITableViewController {
         if indexPath.row == self.fib!.count - 1 {
             scrollIndex += 1
             
-             let queue = DispatchQueue.init(label: "back", qos: .default, attributes: .concurrent, autoreleaseFrequency: .never, target: nil)
+            let queue = DispatchQueue.init(label: "back", qos: .userInteractive, attributes: .concurrent, autoreleaseFrequency: .never, target: nil)
                        queue.async {
                 self.fetchNewFibonacciArr(indexPath: indexPath)
             }
-                tableView.reloadData()
+               
             
         }
         fibonacciCell.configurateCell(cell: fibonacciCell, indexPath: indexPath)
@@ -57,6 +57,9 @@ class FibonacciNumbersViewController: UITableViewController {
         let nextFibArray = Fibonacci.getFibonacciArray(fromStartInt: false, to: 30, with: lastFibArray)
         for arr in nextFibArray! {
             fib?.append(arr)
+        }
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
         }
     }
     
