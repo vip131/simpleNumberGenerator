@@ -10,7 +10,7 @@ import Foundation
 
 struct PrimeNumbers {
     
-    static func generate(upperBound: Int = 100, from startNum: Int) -> [[Int]] {
+    static func generate(upperBound: Int = 100, from startNum: Int) -> [Int] {
         var eratosthenesSieve = Array.init(repeating: true,
                                            count: upperBound)
         var primes = [Int]()
@@ -26,13 +26,12 @@ struct PrimeNumbers {
             primes.append(i)
             
         }
-        let primesArr = primes.chunked(into: 2)
-        return primesArr
+        return primes
     }
     
     
     //Another work method
-    static func findPrimeNumberlist(fromNumber:Int, toNumber: Int) -> [[Int]] {
+    static func findPrimeNumberlist(fromNumber:Int, toNumber: Int) -> [Int] {
         var primes = [Int]()
         for i in (fromNumber + 1)...toNumber
         {
@@ -56,8 +55,7 @@ struct PrimeNumbers {
                 primes.append(i)
             }
         }
-        let primesArr = primes.chunked(into: 2)
-        return primesArr
+        return primes
     }
     
 }

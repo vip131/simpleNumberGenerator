@@ -24,12 +24,9 @@ class Cell: UITableViewCell {
     }
     
      func configurateCell(cell: Cell, indexPath: IndexPath) {
-        let number = Number(isGray: false)
-              if (indexPath.row % 2 == 0) {
-                  number.isGray = true
-              }
-              cell.rightView.backgroundColor = number.isGray ? .clear : .lightGray
-              cell.leftView.backgroundColor = number.isGray ? .lightGray : .clear
+        let oddRow = indexPath.row % 2 == 1 ? true : false
+        cell.rightView.backgroundColor = oddRow ? .lightGray : .clear
+        cell.leftView.backgroundColor = oddRow ? .clear : .lightGray
         
     }
     

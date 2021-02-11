@@ -9,7 +9,7 @@
 import UIKit
 
 class PrimeNumbersViewController: UITableViewController {
-    var prime = PrimeNumbers.generate(upperBound: 200, from: 2) // required! upperBound >= 200
+    var prime = PrimeNumbers.generate(upperBound: 200, from: 2).chunked(into: K.chunkedIndex)//required! upperBound >= 200
     var scrollIndex = 1
     //let queue = OperationQueue()
     
@@ -51,9 +51,10 @@ class PrimeNumbersViewController: UITableViewController {
     
     //MARK: - Fetch new Prime's method -
     func fetchNewPrimeArr() {
+        
         let lastPrimeNum = prime.last?.last
         let toNumber = scrollIndex &* 300
-        var nextPrimeNumArray = PrimeNumbers.findPrimeNumberlist(fromNumber: lastPrimeNum!, toNumber: toNumber)
+        var nextPrimeNumArray = PrimeNumbers.findPrimeNumberlist(fromNumber: lastPrimeNum!, toNumber: toNumber).chunked(into:K.chunkedIndex)
         let lastPrimeArr = nextPrimeNumArray.last!
         if lastPrimeArr.count == 1 {
             nextPrimeNumArray.removeLast()
