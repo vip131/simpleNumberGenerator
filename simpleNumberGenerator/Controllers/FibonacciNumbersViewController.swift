@@ -40,10 +40,12 @@ class FibonacciNumbersViewController: UITableViewController {
         let fibonacciCell = cell as! Cell
         if indexPath.row == self.fib!.count - 1 {
             scrollIndex += 1
-            self.fetchNewFibonacciArr(indexPath: indexPath)
-            DispatchQueue.main.async {
-                tableView.reloadData()
+            
+            DispatchQueue.global(qos: .background).async {
+                self.fetchNewFibonacciArr(indexPath: indexPath)
             }
+                tableView.reloadData()
+            
         }
         fibonacciCell.configurateCell(cell: fibonacciCell, indexPath: indexPath)
     }

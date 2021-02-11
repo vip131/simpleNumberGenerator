@@ -40,6 +40,7 @@
 		84872C7125CFF8A400B1CDED /* Fibonacci.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fibonacci.swift; sourceTree = "<group>"; };
 		84872C7425D013C400B1CDED /* FibonacciNumbersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FibonacciNumbersViewController.swift; sourceTree = "<group>"; };
 		849E7C8D25D06E5B003AE93C /* README.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = README.rtf; sourceTree = "<group>"; };
+		849E7C8F25D07274003AE93C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +57,7 @@
 		84872C4225CD8F5000B1CDED = {
 			isa = PBXGroup;
 			children = (
+				849E7C8F25D07274003AE93C /* README.md */,
 				849E7C8D25D06E5B003AE93C /* README.rtf */,
 				84872C4D25CD8F5000B1CDED /* simpleNumberGenerator */,
 				84872C4C25CD8F5000B1CDED /* Products */,
