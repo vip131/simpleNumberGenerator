@@ -40,9 +40,11 @@ class PrimeNumbersViewController: UITableViewController {
         let primeCell = cell as! Cell
         if indexPath.row == prime.count - 1 {
             scrollIndex += 1
-            DispatchQueue.global(qos: .background).async {
+            let queue = DispatchQueue.init(label: "back", qos: .default, attributes: .concurrent, autoreleaseFrequency: .never, target: nil)
+            queue.async {
                 self.fetchNewPrimeArr()
             }
+           
               tableView.reloadData()
             
         }
